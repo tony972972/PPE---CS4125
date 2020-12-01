@@ -73,7 +73,7 @@ public class LoginForm extends JFrame implements ActionListener {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
     }
-
+    // actionperformed method 
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
@@ -81,7 +81,7 @@ public class LoginForm extends JFrame implements ActionListener {
         @SuppressWarnings("deprecation")
         String pass = passwordField.getText();
         MySQLdata login = new MySQLdata();
-
+        
         if (source == btn1) {
             if (uname.equals("") || pass.equals("")) {
                 JOptionPane.showMessageDialog(this, "please supply login and password",
