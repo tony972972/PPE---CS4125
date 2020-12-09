@@ -81,7 +81,7 @@ public class LoginForm extends JFrame implements ActionListener {
         @SuppressWarnings("deprecation")
         String pass = passwordField.getText();
         MySQLdata login = new MySQLdata();
-        
+        // new comment
         if (source == btn1) {
             if (uname.equals("") || pass.equals("")) {
                 JOptionPane.showMessageDialog(this, "please supply login and password",
