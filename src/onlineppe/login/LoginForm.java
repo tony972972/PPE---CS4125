@@ -73,6 +73,7 @@ public class LoginForm extends JFrame implements ActionListener {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
     }
+
     // actionperformed method 
     @Override
     public void actionPerformed(ActionEvent e) {
