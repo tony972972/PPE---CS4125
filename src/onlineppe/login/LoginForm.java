@@ -9,7 +9,7 @@ import database.MySQLdata;
 
 /**
  *
- * @author tony
+ * @author tony and Jon
  */
 import java.awt.Color;
 import java.awt.Font;
