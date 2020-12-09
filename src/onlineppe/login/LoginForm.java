@@ -98,8 +98,8 @@ public class LoginForm extends JFrame implements ActionListener {
 
         } else if (source == btn2) {
             new Register();
-        }
-    }
+      }
+   }
 
 } // class
 
