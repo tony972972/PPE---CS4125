@@ -22,15 +22,12 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.border.LineBorder;
 
-
-
-
 public class Welcome extends JFrame implements ActionListener {
-    
+
     // String array for holding the locations of the images
     private String[] list = {
         "0.png"
-       
+
     };
 
     private JButton new_game;
@@ -40,21 +37,23 @@ public class Welcome extends JFrame implements ActionListener {
     private String user_id;
     private String username;
     private JLabel pic;
-    
+
     private Image img;
     private JLabel l1;
     private JPanel topJPanel;
     private JPanel centerJPanel;
     private JPanel bottomJPanel;
-    private JMenuBar menuBar = new JMenuBar(); // Window menu bar
+    private JMenuItem i1_menu, i2_menu, i3_menu, i4_menu, i5_menu;
+    private JMenuItem i1_menuOptions, i2_menuOptions, i3_menuOptions;
+    private JMenuItem i1_menuQuit;
 
     public Welcome(String username) {
-       
+
         this.username = username;
-        
+
         topJPanel = new JPanel();
         pic = new JLabel();
-       
+
         l1 = new JLabel("Welcome to the Online Store " + username, SwingConstants.CENTER);
         l1.setForeground(Color.BLUE);
         l1.setFont(new Font("Serif", Font.BOLD, 20));
@@ -90,41 +89,58 @@ public class Welcome extends JFrame implements ActionListener {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Welcome " + username);
-        
+
         setSize(800, 800);
         setResizable(false);
         this.setLocationRelativeTo(null);
-        
-          JMenu menu, submenu;  
-          JMenuItem i1, i2, i3, i4, i5;  
-          
-           // features of the menu
-          JMenuBar mb=new JMenuBar();  
-          menu=new JMenu("Menu");  
-          submenu=new JMenu("Sub Menu");  
-          i1=new JMenuItem("Item 1");  
-          i2=new JMenuItem("Item 2");  
-          i3=new JMenuItem("Item 3");  
-          i4=new JMenuItem("Item 4");  
-          i5=new JMenuItem("Item 5");  
-          menu.add(i1); menu.add(i2); menu.add(i3);  
-          submenu.add(i4); submenu.add(i5);  
-          menu.add(submenu);  
-          mb.add(menu);  
-          setJMenuBar(mb); 
-          
-            
-    
-    
+
+        JMenu menu, menuOptions, menuQuit, submenu;
+
+        // features of the menu
+        JMenuBar mb = new JMenuBar();
+        menu = new JMenu("orders");
+        menuOptions = new JMenu("Purchase PPE");
+        menuQuit = new JMenu("Logout/Quit");
+        submenu = new JMenu("Sub Menu");
+        i1_menu = new JMenuItem("Item 1");
+        i2_menu = new JMenuItem("Item 2");
+        i3_menu = new JMenuItem("Item 3");
+        i4_menu = new JMenuItem("Item 4");
+        i5_menu = new JMenuItem("Item 5");
+        i1_menuOptions = new JMenuItem("Item 1");
+        i2_menuOptions = new JMenuItem("Item 2");
+        i3_menuOptions = new JMenuItem("Item 3");
+        i1_menuQuit = new JMenuItem("Logout/Quit");
+        i1_menu.addActionListener(this);
+        i1_menuQuit.addActionListener(this);
+        menu.add(i1_menu);
+        menu.add(i2_menu);
+        menu.add(i3_menu);
+        submenu.add(i4_menu);
+        submenu.add(i5_menu);
+        menuOptions.add(i1_menuOptions);
+        menuOptions.add(i2_menuOptions);
+        menuOptions.add(i3_menuOptions);
+        menuQuit.add(i1_menuQuit);
+        menu.add(submenu);
+        mb.add(menu);
+        mb.add(menuOptions);
+        mb.add(menuQuit);
+        setJMenuBar(mb);
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        JButton button = (JButton) e.getSource();
-        
+        if (e.getSource() == i1_menu) {
+            System.out.println("you clicked item 1");
+        }
+        if (e.getSource() == i1_menuQuit) {
+            dispose();
+        }
     }
-    
-     public void setImageSize(int i) {
+
+    public void setImageSize(int i) {
         ImageIcon icon = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/" + list[i]));
         Image img = icon.getImage();
         Image newImage = img.getScaledInstance(pic.getWidth(), pic.getHeight(), Image.SCALE_SMOOTH);
