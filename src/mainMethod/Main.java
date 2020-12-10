@@ -15,9 +15,8 @@ public class Main {
 
     public static void main(String[] args) {
         LoginForm launch = new LoginForm();
-        //bh
+        //bh test
         //hi
-        //hello test
     }
 
 }
