@@ -17,7 +17,7 @@ public class Main {
     public static void main(String[] args) {
         LoginForm launch = new LoginForm();
         //bh test
-        //merge
+        //test
     }
 
 }
