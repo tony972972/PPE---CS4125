@@ -93,7 +93,7 @@ public class Welcome extends JFrame implements ActionListener {
         setSize(800, 800);
         setResizable(false);
         this.setLocationRelativeTo(null);
-
+        // Menu settings
         JMenu menu, menuOptions, menuQuit, submenu;
 
         // features of the menu
@@ -107,11 +107,12 @@ public class Welcome extends JFrame implements ActionListener {
         i3_menu = new JMenuItem("Item 3");
         i4_menu = new JMenuItem("Item 4");
         i5_menu = new JMenuItem("Item 5");
-        i1_menuOptions = new JMenuItem("Item 1");
-        i2_menuOptions = new JMenuItem("Item 2");
-        i3_menuOptions = new JMenuItem("Item 3");
+        i1_menuOptions = new JMenuItem("Masks");
+        i2_menuOptions = new JMenuItem("Gloves");
+        i3_menuOptions = new JMenuItem("Hand Wash");
         i1_menuQuit = new JMenuItem("Logout/Quit");
         i1_menu.addActionListener(this);
+        i1_menuOptions.addActionListener(this);
         i1_menuQuit.addActionListener(this);
         menu.add(i1_menu);
         menu.add(i2_menu);
@@ -137,6 +138,9 @@ public class Welcome extends JFrame implements ActionListener {
         }
         if (e.getSource() == i1_menuQuit) {
             dispose();
+        }
+        if(e.getSource() == i1_menuOptions){
+            PPESelection mask = new PPESelection(username);
         }
     }
 
