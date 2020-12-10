@@ -25,9 +25,20 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.border.LineBorder;
 
-public class PPESelection extends JFrame implements ActionListener {
+public class PPESelection extends JFrame implements ActionListener{
 
-    
+     // String array for holding the locations of the images
+    private String[] list = {
+        "0.png",
+        "1.png",
+        "2.png",
+        "3.png",
+        "4.png",
+        "5.png",
+        "6.png",
+        "7.png",
+        "8.png"
+    };
 
     private JButton mask_1;
     private JButton mask_2;
@@ -113,21 +124,21 @@ public class PPESelection extends JFrame implements ActionListener {
 
     }
 
-    @Override
+   
+    
+    
+ @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == i1_menu) {
-            System.out.println("you clicked item 1");
-        }
-        if (e.getSource() == i1_menuQuit) {
-            dispose();
-        }
+        
     }
 
-    /*public void setImageSize(int i) {
+    public void setImageSize(int i) {
         ImageIcon icon = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/" + list[i]));
         Image img = icon.getImage();
         Image newImage = img.getScaledInstance(pic.getWidth(), pic.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon newImc = new ImageIcon(newImage);
         pic.setIcon(newImc);
-    } // setImageSize*/
+    }
+
+    
 }
