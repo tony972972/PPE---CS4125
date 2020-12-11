@@ -30,11 +30,21 @@ import javax.swing.border.LineBorder;
 public class PPEgloves extends JFrame implements ActionListener {
 
     
-
+ private String[] list = {
+        "0.png",
+        "1.png",
+        "2.png",
+        "3.png",
+        "4.png",
+        "5.png",
+        "6.png",
+        "7.png",
+        "8.png"
+    };
     private JButton gloves_1;
-    private JButton gowns_2;
-    private JButton footwear_3;
-   
+    private JButton gloves_2;
+    private JButton gloves_3;
+    
     private String username;
     private JLabel pic;
 
@@ -71,14 +81,22 @@ public class PPEgloves extends JFrame implements ActionListener {
         
         ImageIcon ii = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/gloves.jpeg"));
         JLabel label1=new JLabel(ii);
+        
+        Icon icon = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/reusable_nitrile.jpeg"));
+        JLabel label2 =new JLabel(icon);
+        
+        Icon icon2 = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/Barrier_laminate.jpg"));
+        JLabel label3 =new JLabel(icon2);
 
-        Icon icon = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/gowns.jpg"));
-        JLabel label2 = new JLabel(icon);
+        Icon icon3 = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/gowns.jpg"));
+        JLabel label4 = new JLabel(icon3);
         
-        Icon icon2 = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/shoes.jpg"));
-        JLabel label3 = new JLabel(icon2);
+        Icon icon4 = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/shoes.jpg"));
+        JLabel label5 = new JLabel(icon4);
         
-        gloves_1 = new JButton("Protective Gloves");
+        gloves_1 = new JButton("Disposable nitrile gloves");
+        gloves_2 = new JButton("reusable nitrile gloves");
+        gloves_3 = new JButton("Barrier laminate gloves");
         gowns_2 = new JButton("Disposable gowns");
         footwear_3 = new JButton("Disposable Shoe covers");
         
@@ -96,14 +114,16 @@ public class PPEgloves extends JFrame implements ActionListener {
         pContainer.add(label2,c);
         c.gridx = 1;
         c.gridy = 1;
-        pContainer.add(gowns_2,c);
+        pContainer.add(gloves_2,c);
         c.gridx = 0;
         c.gridy = 2;
         pContainer.add(label3,c);
         c.gridx = 1;
         c.gridy = 2;
-        pContainer.add(footwear_3,c);
-        
+        pContainer.add(gloves_3,c);
+        c.gridx = 2;
+        c.gridy = 2;
+
         JScrollPane jsp=new JScrollPane(pContainer);
         add(jsp);
 
@@ -125,11 +145,11 @@ public class PPEgloves extends JFrame implements ActionListener {
         }
     }
 
-    /*public void setImageSize(int i) {
+    public void setImageSize(int i) {
         ImageIcon icon = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/" + list[i]));
         Image img = icon.getImage();
         Image newImage = img.getScaledInstance(pic.getWidth(), pic.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon newImc = new ImageIcon(newImage);
         pic.setIcon(newImc);
-    } // setImageSize*/
+    } 
 }
