@@ -116,6 +116,8 @@ public class Welcome extends JFrame implements ActionListener {
         i1_menuOptions.addActionListener(this);
         i1_menuQuit.addActionListener(this);
         i2_menuOptions.addActionListener(this);
+        i3_menuOptions.addActionListener(this);
+        i4_menuOptions.addActionListener(this);
         menu.add(i1_menu);
         menu.add(i2_menu);
         menu.add(i3_menu);
@@ -150,6 +152,12 @@ public class Welcome extends JFrame implements ActionListener {
         }
        if(e.getSource() == i2_menuOptions){
             PPEgloves gloves = new PPEgloves(username);
+        }
+       if(e.getSource() == i3_menuOptions){
+            PPEhandwash wash = new PPEhandwash(username);
+        }
+       if(e.getSource() == i4_menuOptions){
+            PPEcovers covers = new PPEcovers(username);
         }
     }
     
