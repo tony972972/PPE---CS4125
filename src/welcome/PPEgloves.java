@@ -124,7 +124,7 @@ public class PPEgloves extends JFrame implements ActionListener {
             dispose();
         }
     }
-
+//test commit comment
     /*public void setImageSize(int i) {
         ImageIcon icon = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/" + list[i]));
         Image img = icon.getImage();
