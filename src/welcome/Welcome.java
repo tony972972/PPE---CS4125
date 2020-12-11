@@ -44,7 +44,7 @@ public class Welcome extends JFrame implements ActionListener {
     private JPanel centerJPanel;
     private JPanel bottomJPanel;
     private JMenuItem i1_menu, i2_menu, i3_menu, i4_menu, i5_menu;
-    private JMenuItem i1_menuOptions, i2_menuOptions, i3_menuOptions;
+    private JMenuItem i1_menuOptions, i2_menuOptions, i3_menuOptions,i4_menuOptions;
     private JMenuItem i1_menuQuit;
 
     public Welcome(String username) {
@@ -110,12 +110,15 @@ public class Welcome extends JFrame implements ActionListener {
         i1_menuOptions = new JMenuItem("Masks");
         i2_menuOptions = new JMenuItem("Gloves");
         i3_menuOptions = new JMenuItem("Hand Wash");
+        i4_menuOptions = new JMenuItem("body cover");
         i1_menuQuit = new JMenuItem("Logout/Quit");
         i1_menu.addActionListener(this);
         i1_menuOptions.addActionListener(this);
         i1_menuQuit.addActionListener(this);
         i2_menu.addActionListener(this);
         i2_menuOptions.addActionListener(this);
+        i3_menuOptions.addActionListener(this);
+        i4_menuOptions.addActionListener(this);
         menu.add(i1_menu);
         menu.add(i2_menu);
         menu.add(i3_menu);
@@ -124,6 +127,7 @@ public class Welcome extends JFrame implements ActionListener {
         menuOptions.add(i1_menuOptions);
         menuOptions.add(i2_menuOptions);
         menuOptions.add(i3_menuOptions);
+        menuOptions.add(i4_menuOptions);
         menuQuit.add(i1_menuQuit);
         menu.add(submenu);
         mb.add(menu);
@@ -149,6 +153,12 @@ public class Welcome extends JFrame implements ActionListener {
         }
          if(e.getSource() == i2_menuOptions){
             PPEgloves gloves = new PPEgloves(username);
+        }
+         if(e.getSource() == i3_menuOptions){
+            PPEhandwash gloves = new PPEhandwash(username);
+        }
+         if(e.getSource() == i4_menuOptions){
+            PPEcovers gloves = new PPEcovers(username);
         }
     }
     

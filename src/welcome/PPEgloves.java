@@ -97,9 +97,7 @@ public class PPEgloves extends JFrame implements ActionListener {
         gloves_1 = new JButton("Disposable nitrile gloves");
         gloves_2 = new JButton("reusable nitrile gloves");
         gloves_3 = new JButton("Barrier laminate gloves");
-        gowns_2 = new JButton("Disposable gowns");
-        footwear_3 = new JButton("Disposable Shoe covers");
-        
+       
         GridBagConstraints c = new GridBagConstraints();
         JPanel pContainer = new JPanel(new GridBagLayout());
         c.gridx = 0;
