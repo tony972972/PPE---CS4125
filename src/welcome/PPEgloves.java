@@ -72,10 +72,10 @@ public class PPEgloves extends JFrame implements ActionListener {
         ImageIcon ii = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/gloves.jpeg"));
         JLabel label1=new JLabel(ii);
 
-        Icon icon = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/gowns.jpg"));
+        Icon icon = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/gowns-400-1.jpg"));
         JLabel label2 = new JLabel(icon);
         
-        Icon icon2 = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/shoes.jpg"));
+        Icon icon2 = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/shoe.jpg"));
         JLabel label3 = new JLabel(icon2);
         
         gloves_1 = new JButton("Protective Gloves");
