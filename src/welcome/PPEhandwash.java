@@ -5,7 +5,7 @@
  */
 package welcome;
 
-//i love anilaaaa
+
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -27,10 +27,9 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.border.LineBorder;
 
-public class PPEgloves extends JFrame implements ActionListener {
+public class PPEhandwash extends JFrame implements ActionListener {
 
-    
- private String[] list = {
+     private String[] list = {
         "0.png",
         "1.png",
         "2.png",
@@ -41,10 +40,11 @@ public class PPEgloves extends JFrame implements ActionListener {
         "7.png",
         "8.png"
     };
-    private JButton gloves_1;
-    private JButton gloves_2;
-    private JButton gloves_3;
-    
+
+    private JButton soap;
+    private JButton sanitizer;
+
+   
     private String username;
     private JLabel pic;
 
@@ -56,7 +56,7 @@ public class PPEgloves extends JFrame implements ActionListener {
     private JMenuItem i1_menuOptions, i2_menuOptions, i3_menuOptions;
     private JMenuItem i1_menuQuit;
 //2nd menu option goves,gowns and shoe covers...
-    public PPEgloves(String username) {
+    public PPEhandwash(String username) {
 
         this.username = username;
 
@@ -78,50 +78,34 @@ public class PPEgloves extends JFrame implements ActionListener {
         
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Welcome " + username);
-        
-        ImageIcon ii = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/gloves.jpeg"));
-        JLabel label1=new JLabel(ii);
-        
-        Icon icon = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/reusable_nitrile.jpeg"));
-        JLabel label2 =new JLabel(icon);
-        
-        Icon icon2 = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/Barrier_laminate.jpg"));
-        JLabel label3 =new JLabel(icon2);
 
-        Icon icon3 = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/gowns.jpg"));
+
+        Icon icon3 = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/soap.jpg"));
         JLabel label4 = new JLabel(icon3);
         
-        Icon icon4 = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/shoes.jpg"));
+        Icon icon4 = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/sanitizer.png"));
         JLabel label5 = new JLabel(icon4);
         
-        gloves_1 = new JButton("Disposable nitrile gloves");
-        gloves_2 = new JButton("reusable nitrile gloves");
-        gloves_3 = new JButton("Barrier laminate gloves");
-       
+
+        soap = new JButton("Handwash");
+        sanitizer = new JButton("Sanitizer");
+        
         GridBagConstraints c = new GridBagConstraints();
         JPanel pContainer = new JPanel(new GridBagLayout());
         c.gridx = 0;
         c.gridy = 0;
         c.insets = new Insets(30,30,30,30);
-        pContainer.add(label1,c);
+        pContainer.add(label4,c);
         c.gridx = 1;
         c.gridy = 0;
-        pContainer.add(gloves_1,c);
+        pContainer.add(soap,c);
         c.gridx = 0;
         c.gridy = 1;
-        pContainer.add(label2,c);
+        pContainer.add(label5,c);
         c.gridx = 1;
         c.gridy = 1;
-        pContainer.add(gloves_2,c);
-        c.gridx = 0;
-        c.gridy = 2;
-        pContainer.add(label3,c);
-        c.gridx = 1;
-        c.gridy = 2;
-        pContainer.add(gloves_3,c);
-        c.gridx = 2;
-        c.gridy = 2;
-
+        pContainer.add(sanitizer,c);
+        
         JScrollPane jsp=new JScrollPane(pContainer);
         add(jsp);
 

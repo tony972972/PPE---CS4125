@@ -44,7 +44,7 @@ public class Welcome extends JFrame implements ActionListener {
     private JPanel centerJPanel;
     private JPanel bottomJPanel;
     private JMenuItem i1_menu, i2_menu, i3_menu, i4_menu, i5_menu;
-    private JMenuItem i1_menuOptions, i2_menuOptions, i3_menuOptions;
+    private JMenuItem i1_menuOptions, i2_menuOptions, i3_menuOptions,i4_menuOptions;
     private JMenuItem i1_menuQuit;
 
     public Welcome(String username) {
@@ -110,6 +110,7 @@ public class Welcome extends JFrame implements ActionListener {
         i1_menuOptions = new JMenuItem("Masks");
         i2_menuOptions = new JMenuItem("Gloves");
         i3_menuOptions = new JMenuItem("Hand Wash");
+        i4_menuOptions = new JMenuItem("body cover");
         i1_menuQuit = new JMenuItem("Logout/Quit");
         i1_menu.addActionListener(this);
         i1_menuOptions.addActionListener(this);
@@ -123,6 +124,7 @@ public class Welcome extends JFrame implements ActionListener {
         menuOptions.add(i1_menuOptions);
         menuOptions.add(i2_menuOptions);
         menuOptions.add(i3_menuOptions);
+        menuOptions.add(i4_menuOptions);
         menuQuit.add(i1_menuQuit);
         menu.add(submenu);
         mb.add(menu);
@@ -137,6 +139,9 @@ public class Welcome extends JFrame implements ActionListener {
         if (e.getSource() == i1_menu) {
             System.out.println("you clicked item 1");
         }
+         if (e.getSource() == i2_menu) {
+            System.out.println("you clicked item 1");
+        }
         if (e.getSource() == i1_menuQuit) {
             dispose();
         }
@@ -147,6 +152,10 @@ public class Welcome extends JFrame implements ActionListener {
             PPEgloves gloves = new PPEgloves(username);
         }
     }
+    
+  
+    
+    
 
     public void setImageSize(int i) {
         ImageIcon icon = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/" + list[i]));
