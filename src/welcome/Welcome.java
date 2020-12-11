@@ -114,6 +114,8 @@ public class Welcome extends JFrame implements ActionListener {
         i1_menu.addActionListener(this);
         i1_menuOptions.addActionListener(this);
         i1_menuQuit.addActionListener(this);
+        i2_menu.addActionListener(this);
+        i2_menuOptions.addActionListener(this);
         menu.add(i1_menu);
         menu.add(i2_menu);
         menu.add(i3_menu);
@@ -136,13 +138,23 @@ public class Welcome extends JFrame implements ActionListener {
         if (e.getSource() == i1_menu) {
             System.out.println("you clicked item 1");
         }
+         if (e.getSource() == i2_menu) {
+            System.out.println("you clicked item 1");
+        }
         if (e.getSource() == i1_menuQuit) {
             dispose();
         }
         if(e.getSource() == i1_menuOptions){
             PPESelection mask = new PPESelection(username);
         }
+         if(e.getSource() == i2_menuOptions){
+            PPEgloves gloves = new PPEgloves(username);
+        }
     }
+    
+  
+    
+    
 
     public void setImageSize(int i) {
         ImageIcon icon = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/" + list[i]));
