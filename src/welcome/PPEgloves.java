@@ -82,21 +82,16 @@ public class PPEgloves extends JFrame implements ActionListener {
         ImageIcon ii = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/gloves.jpeg"));
         JLabel label1=new JLabel(ii);
         
-        Icon icon = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/reusable_nitrile.jpeg"));
+        Icon icon = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/gowns-400-1.jpg"));
         JLabel label2 =new JLabel(icon);
+       
         
-        Icon icon2 = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/Barrier_laminate.jpg"));
-        JLabel label3 =new JLabel(icon2);
-
-        Icon icon3 = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/gowns.jpg"));
-        JLabel label4 = new JLabel(icon3);
-        
-        Icon icon4 = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/shoes.jpg"));
+        Icon icon4 = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/shoe.jpg"));
         JLabel label5 = new JLabel(icon4);
         
-        gloves_1 = new JButton("Disposable nitrile gloves");
-        gloves_2 = new JButton("reusable nitrile gloves");
-        gloves_3 = new JButton("Barrier laminate gloves");
+        gloves_1 = new JButton("Gloves");
+        gloves_2 = new JButton("Gowns");
+        gloves_3 = new JButton("Shoes");
        
         GridBagConstraints c = new GridBagConstraints();
         JPanel pContainer = new JPanel(new GridBagLayout());
@@ -115,7 +110,7 @@ public class PPEgloves extends JFrame implements ActionListener {
         pContainer.add(gloves_2,c);
         c.gridx = 0;
         c.gridy = 2;
-        pContainer.add(label3,c);
+        pContainer.add(label5,c);
         c.gridx = 1;
         c.gridy = 2;
         pContainer.add(gloves_3,c);

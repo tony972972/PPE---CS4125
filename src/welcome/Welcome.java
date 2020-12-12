@@ -142,7 +142,7 @@ public class Welcome extends JFrame implements ActionListener {
             System.out.println("you clicked item 1");
         }
          if (e.getSource() == i2_menu) {
-            System.out.println("you clicked item 1");
+            System.out.println("you clicked item 2");
         }
         if (e.getSource() == i1_menuQuit) {
             dispose();
@@ -156,9 +156,7 @@ public class Welcome extends JFrame implements ActionListener {
        if(e.getSource() == i3_menuOptions){
             PPEhandwash wash = new PPEhandwash(username);
         }
-       if(e.getSource() == i4_menuOptions){
-            PPEcovers covers = new PPEcovers(username);
-        }
+       
     }
     
   

@@ -61,23 +61,29 @@ public class MySQLdata{
     private int tmCounter = 0;
     
     
-    public void registerToDatabase(String name, String surname, String username, String password) throws Exception {
+    public void registerToDatabase(int customer_id, String username, String lastName, String firstName, String pass, String phone, String address) throws Exception {
         try {
             //"jdbc:mysql://localhost/hangman"
             // This will load the MySQL driver, each DB has its own driver
             Class.forName("com.mysql.jdbc.Driver");
             // Setup the connection with the DB
             connect = DriverManager
-                    .getConnection("jdbc:mysql://localhost/PPE_WAREHOUSE", "root", "");
+                    .getConnection("jdbc:mysql://localhost/CLASSICMODELS", "root", "");
+            
+            String query = " insert into customers (customerNumber, customerName, contactLastName, contactFirstName, Password, phone, addressLine1)"
+                    + " values (?, ?, ?, ?, ?, ?, ?)";
             
              preparedStatement = connect
-          .prepareStatement("insert into  ppe_warehouse.USERS values (default, ?, ?, ?, ?)");
+          .prepareStatement(query);
       // "myuser, webpage, datum, summery, COMMENTS from FEEDBACK.COMMENTS");
       // Parameters start with 1
-      preparedStatement.setString(1, name);
-      preparedStatement.setString(2, surname);
-      preparedStatement.setString(3, username);
-      preparedStatement.setString(4, password);
+      preparedStatement.setInt(1, customer_id);
+      preparedStatement.setString(2, username);
+      preparedStatement.setString(3, lastName);
+      preparedStatement.setString(4, firstName);
+      preparedStatement.setString(5, pass);
+      preparedStatement.setString(6, phone);
+      preparedStatement.setString(7, address);
       preparedStatement.executeUpdate();
       
            
@@ -97,10 +103,10 @@ public class MySQLdata{
             Class.forName("com.mysql.jdbc.Driver");
              // Setup the connection with the DB
             connect = DriverManager
-                    .getConnection("jdbc:mysql://localhost/PPE_WAREHOUSE", "root", "");
+                    .getConnection("jdbc:mysql://localhost/CLASSICMODELS", "root", "");
             
              preparedStatement = connect
-          .prepareStatement("select name, password from ppe_warehouse.USERS where username=? and password=?");
+          .prepareStatement("select customerName, Password from classicmodels.CUSTOMERS where customerName=? and Password=?");
              preparedStatement.setString(1,username);
              preparedStatement.setString(2,password);
              ResultSet rs = preparedStatement.executeQuery();

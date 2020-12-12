@@ -83,7 +83,7 @@ public class PPEhandwash extends JFrame implements ActionListener {
         Icon icon3 = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/soap.jpg"));
         JLabel label4 = new JLabel(icon3);
         
-        Icon icon4 = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/sanitizer.png"));
+        Icon icon4 = new ImageIcon(ClassLoader.getSystemResource("ppeOnline/images/hand.jpg"));
         JLabel label5 = new JLabel(icon4);
         
 
