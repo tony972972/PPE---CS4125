@@ -129,6 +129,17 @@ public class PPESelection extends JFrame implements ActionListener{
     
  @Override
     public void actionPerformed(ActionEvent e) {
+         if (e.getSource() == mask_1) {
+            JOptionPane.showMessageDialog(null, "You added standard mask to cart", "Added to cart!" , JOptionPane.INFORMATION_MESSAGE);
+        }
+         if (e.getSource() == mask_2) {
+            JOptionPane.showMessageDialog(null, "You added Custom mask to cart", "Added to cart!" , JOptionPane.INFORMATION_MESSAGE);
+            
+         }
+        if (e.getSource() == mask_3) {
+           JOptionPane.showMessageDialog(null, "You added shield mask to cart", "Added to cart!" , JOptionPane.INFORMATION_MESSAGE);
+             
+        }
         
     }
 
